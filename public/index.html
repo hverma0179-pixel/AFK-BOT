@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BotGrid Control Panel</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">BG</div>
+          <div>
+            <h1>BotGrid</h1>
+            <p>24/7 cracked bot control</p>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>How it works</h2>
+          <p>Users save a server, the app starts an offline-mode Java bot, and the panel tracks status, coordinates, and actions.</p>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>24/7 note</h2>
+          <p>Your website must run on an always-on VPS or Node host. Static hosting alone cannot keep bots connected.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero">
+          <div>
+            <p class="eyeline">Minecraft Java dashboard</p>
+            <h2>Deploy a bot from the browser and control it live.</h2>
+          </div>
+          <div class="hero-actions">
+            <button id="refresh-btn" class="ghost-btn">Refresh</button>
+            <button id="logout-btn" class="ghost-btn hidden">Logout</button>
+          </div>
+        </header>
+
+        <section id="auth-panel" class="panel auth-panel">
+          <div class="panel-head">
+            <h3>Login or Create Account</h3>
+            <span class="chip">Session based</span>
+          </div>
+
+          <div class="auth-grid">
+            <form id="register-form" class="stack">
+              <h4>Create account</h4>
+              <input name="username" placeholder="username" required />
+              <input name="password" type="password" placeholder="password" required />
+              <button type="submit">Register</button>
+            </form>
+
+            <form id="login-form" class="stack">
+              <h4>Login</h4>
+              <input name="username" placeholder="username" required />
+              <input name="password" type="password" placeholder="password" required />
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="dashboard" class="hidden">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h3>Add a Server Bot</h3>
+                <p>One saved server creates one bot runtime for that user.</p>
+              </div>
+              <span id="user-pill" class="chip"></span>
+            </div>
+
+            <form id="server-form" class="server-form">
+              <input name="label" placeholder="Panel label" required />
+              <input name="host" placeholder="Server IP or domain" required />
+              <input name="port" placeholder="25565" value="25565" />
+              <input name="username" placeholder="Bot username" required />
+              <input name="version" placeholder="Leave empty for auto version" />
+              <button type="submit">Deploy Bot</button>
+            </form>
+          </section>
+
+          <section class="stats-row">
+            <article class="stat-card">
+              <span>Total Bots</span>
+              <strong id="stat-total">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Online</span>
+              <strong id="stat-online">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Users</span>
+              <strong id="stat-user">0</strong>
+            </article>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h3>Your Bots</h3>
+                <p>Coordinates, health, movement, anti-AFK, reconnect, chat, and basic block breaking.</p>
+              </div>
+            </div>
+            <div id="bot-list" class="bot-list"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
