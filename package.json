@@ -1,0 +1,17 @@
+{
+  "name": "minecraft-bot-control-panel",
+  "version": "1.0.0",
+  "description": "Multi-user Minecraft Java cracked bot control panel with live status and bot deployment.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mineflayer": "^4.33.0"
+  }
+}
